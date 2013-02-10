@@ -35,7 +35,7 @@ string temporary:
     MessageBox( hwnd, strprintf( "error %d", errorcode ).c_str(), NULL, MB_OK );
 ```
 
-## Printf directly to an MFC CString
+## **[mfc-strprintf](https://github.com/mmorearty/mfc-strprintf):** Printf directly to an MFC CString
 
 This is a function which makes it easy to elegantly create a temporary `char*` or
 `CString` and pass it as an argument, without having to explicitly create a
