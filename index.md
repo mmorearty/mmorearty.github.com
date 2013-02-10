@@ -4,12 +4,6 @@ layout: default
 
 # Mike Morearty's code
 
-## [Hardware breakpoints](https://github.com/mmorearty/hardware-breakpoints)
-
-A C++ class to allow you to very easily set hardware breakpoints from within
-your program.  This can be used, for example, if a particular variable is
-getting trashed.
-
 ## **[streamprintf](https://github.com/mmorearty/streamprintf):** Type-safe, buffer-safe printf to a C++ `std::ostream` or `std::string`
 
 ```c++
@@ -34,6 +28,12 @@ string temporary:
 ```c++
     MessageBox( hwnd, strprintf( "error %d", errorcode ).c_str(), NULL, MB_OK );
 ```
+
+## [Hardware breakpoints](https://github.com/mmorearty/hardware-breakpoints)
+
+A C++ class to allow you to very easily set hardware breakpoints from within
+your program.  This can be used, for example, if a particular variable is
+getting trashed.
 
 ## **[mfc-strprintf](https://github.com/mmorearty/mfc-strprintf):** Printf directly to an MFC CString
 
