@@ -1,0 +1,25 @@
+{% comment %}
+
+  Amazing trick for relative urls from http://stackoverflow.com/a/14254928/179675
+
+  First, include this file: {% include relative.liquid %}
+
+  Then, whenever you want to make a URL that is relative to the root of this blog,
+  use {{ relative }}.  {{ relative }} by itself gives the path to the root,
+  WITHOUT a trailing '/'.
+
+  Don't forget the slash!  Example uses:
+
+      <script src="{{ relative }}/scripts/foo.js"></script>
+      <img src="{{ relative }}/images/foo.png">
+      <a href="{{ relative }}/">blog home</a>         <-- notice the slash
+
+  Since {{ post.url }} already contains a leading slash, don't add an extra one
+  if you want a relative URL to a post:
+
+      <a href="{{ relative }}{{ post.url }}">{{ post.title }}</a>
+
+{% endcomment %}
+
+{% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
+{% capture relative %}.{% for i in (3..lvl) %}/..{% endfor %}{% endcapture %}
