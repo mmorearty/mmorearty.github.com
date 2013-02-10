@@ -2,18 +2,15 @@
 layout: default
 ---
 
-Mike Morearty's code
-====================
+# Mike Morearty's code
 
-Hardware breakpoints
---------------------
+## [Hardware breakpoints](https://github.com/mmorearty/hardware-breakpoints)
 
 A C++ class to allow you to very easily set hardware breakpoints from within
 your program.  This can be used, for example, if a particular variable is
 getting trashed.
 
-Type-safe, buffer-safe `printf` to a C++ `std::ostream` or `std::string`
-------------------------------------------------------------------------
+## **[streamprintf](https://github.com/mmorearty/streamprintf):** Type-safe, buffer-safe printf to a C++ `std::ostream` or `std::string`
 
 ```c++
     void oprintf( std::ostream&, printf_format, ... );
@@ -24,8 +21,8 @@ Type-safe, buffer-safe `printf` to a C++ `std::ostream` or `std::string`
 These functions provide type-safe printf!  For example:
 
 ```c++
-    oprintf( cout, "%s", 3 ); // run-time assertion: type mismatch
-    oprintf( cout, "%s" ); // run-time assertion: too few arguments
+    oprintf( cout, "%s", 3 );    // run-time assertion: type mismatch
+    oprintf( cout, "%s" );       // run-time assertion: too few arguments
     oprintf( cout, "hello", 3 ); // run-time assertion: too many arguments
 ```
 
@@ -38,8 +35,7 @@ string temporary:
     MessageBox( hwnd, strprintf( "error %d", errorcode ).c_str(), NULL, MB_OK );
 ```
 
-Printf directly to an MFC CString
----------------------------------
+## Printf directly to an MFC CString
 
 This is a function which makes it easy to elegantly create a temporary `char*` or
 `CString` and pass it as an argument, without having to explicitly create a
@@ -57,8 +53,7 @@ temporary variable. For example, you can combine these three lines...
     AfxMessageBox( StrPrintf(format_string, args ...) );
 ```
 
-IDispatch wrapper with Get("property"), Put/PutRef("property", value), Invoke("method", args)
----------------------------------------------------------------------------------------------
+## IDispatch wrapper with Get("property"), Put/PutRef("property", value), Invoke("method", args)
 
 ATL, MFC, and the Visual C++ runtime library already have wrappers for
 IDispatch (CComDispatchDriver, COleDispatchDriver, and the `_com_dispatch_...`
