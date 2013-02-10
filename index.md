@@ -53,17 +53,17 @@ temporary variable. For example, you can combine these three lines...
     AfxMessageBox( StrPrintf(format_string, args ...) );
 ```
 
-## IDispatch wrapper with Get("property"), Put/PutRef("property", value), Invoke("method", args)
+## **[DispatchPtr](https://github.com/mmorearty/DispatchPtr):** IDispatch wrapper with Get("property"), Set/SetRef("property", value), Invoke("method", args)
 
 ATL, MFC, and the Visual C++ runtime library already have wrappers for
-IDispatch (CComDispatchDriver, COleDispatchDriver, and the `_com_dispatch_...`
-methods, respectively). However, all three of these suffer from syntax that is
-much more awkward than what you can write in languages such as Visual Basic and
-Javascript.  This wrapper lets you write code like this:
+`IDispatch` (`CComDispatchDriver`, `COleDispatchDriver`, and the
+`_com_dispatch_...` methods, respectively). However, all three of these suffer
+from syntax that is much more awkward than what you can write in languages such
+as Visual Basic and Javascript.  This wrapper lets you write code like this:
 
 ```c++
     _bstr_t html = htmldoc.Get("body").Get("innerHTML");
-    htmldoc.Put("title", "New Title");
+    htmldoc.Set("title", "New Title");
     htmldoc.Get("body").Get("firstChild").Invoke(
         "insertAdjacentText", "afterBegin", "hello world");
 ```
